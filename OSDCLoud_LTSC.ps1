@@ -20,7 +20,7 @@ Write-Host  -ForegroundColor Cyan "Start OSDCloud with custom parameters"
 Write-Host  -ForegroundColor Cyan "OS: Windows 10 Enterprise LTSC 22H2"
 
 #Windows 10 Enterprise LTSC 2021
-Start-OSDCloud -OSLanguage en-us -OSBuild 22H2 -OSEdition Enterprise LTSC -OSLicense Volume -ZTI -OSVersion 'Windows 10'
+Start-OSDCloud -OSLanguage en-us -OSBuild 22H2 -OSEdition Enterprise -OSLicense Volume -OSVersion 'Windows 10 LTSC' -ZTI
 
 #Restart from WinPE
 Write-Host   -ForegroundColor Cyan "Restarting in 20 seconds!"
