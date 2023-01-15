@@ -24,4 +24,4 @@ Start-OSDCloud -OSLanguage en-us -OSBuild 22H2 -OSEdition Enterprise -OSLicense 
 #Restart from WinPE
 Write-Host   -ForegroundColor Cyan "Restarting in 20 seconds!"
 Start-Sleep  -Seconds 20
-#wpeutil reboot
+wpeutil reboot
