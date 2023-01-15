@@ -1,5 +1,4 @@
-Write-Host  -ForegroundColor Cyan "UIC Tech. Solutions"
-Write-Host  -ForegroundColor Cyan "OS Deployment process, using OSDCloud."
+Write-Host  -ForegroundColor Cyan "UIC Tech. Solutions: Windows Deployment process using OSDCloud."
 Start-Sleep -Seconds 5
 
 #Change Display Resolution for Virtual Machine
@@ -20,7 +19,7 @@ Write-Host  -ForegroundColor Cyan "Start OSDCloud with custom parameters"
 Write-Host  -ForegroundColor Cyan "OS: Windows 10 Enterprise LTSC 22H2"
 
 #Windows 10 Enterprise LTSC 2021
-Start-OSDCloud -OSLanguage en-us -OSBuild 22H2 -OSEdition Enterprise -OSLicense Volume -OSVersion 'Windows 10 LTSC' -ZTI
+Start-OSDCloud -OSLanguage en-us -OSBuild 22H2 -OSEdition Enterprise -OSLicense Volume -OSVersion 'Windows 10' -ZTI
 
 #Restart from WinPE
 Write-Host   -ForegroundColor Cyan "Restarting in 20 seconds!"
