@@ -1,5 +1,4 @@
-Write-Host  -ForegroundColor Cyan "UIC Tech. Solutions"
-Write-Host  -ForegroundColor Cyan "OS Deployment process, using OSDCloud."
+Write-Host  -ForegroundColor Cyan "UIC Tech. Solutions OS Deployment using OSDCloud."
 Start-Sleep -Seconds 5
 
 #Change Display Resolution for Virtual Machine
@@ -9,6 +8,7 @@ if ((Get-MyComputerModel) -match 'Virtual') {
 }
 
 #Make sure I have the latest OSD Content
+
 Write-Host  -ForegroundColor Cyan "Updating the awesome OSD PowerShell Module"
 Install-Module OSD -Force
 
