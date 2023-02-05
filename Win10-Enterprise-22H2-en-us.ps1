@@ -22,6 +22,7 @@ Write-Host  -ForegroundColor Cyan "OS: Windows 10 Enterprise 22H2"
 Start-OSDCloud -OSLanguage en-us -OSBuild 22H2 -OSEdition Enterprise -OSLicense Volume -ZTI -OSVersion 'Windows 10'
 
 #Restart from WinPE
-Write-Host  -ForegroundColor Cyan "Restarting in 20 seconds!"
-Start-Sleep  -Seconds 20
-wpeutil reboot
+#Write-Host  -ForegroundColor Cyan "Restarting in 20 seconds!"
+Write-Host  -ForegroundColor Cyan "use 'wpeutil shutdown' and remove USB drive after power is off!"
+#Start-Sleep  -Seconds 20
+#wpeutil reboot
