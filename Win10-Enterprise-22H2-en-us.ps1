@@ -22,9 +22,9 @@ Write-Host  -ForegroundColor Cyan "OS: Windows 10 Enterprise 22H2"
 Start-OSDCloud -OSLanguage en-us -OSBuild 22H2 -OSEdition Enterprise -OSLicense Volume -ZTI -OSVersion 'Windows 10'
 
 #Restart from WinPE
-#Write-Host  -ForegroundColor Cyan "Restarting in 20 seconds!"
+#Write-Host -ForegroundColor Cyan "Restarting in 20 seconds!"
 Write-host  -ForegroundColor Cyan "Use this link to download the Lenovo M920q driver pack"
-write-host -ForeggroundColor Cyan "https://download.lenovo.com/pccbbs/thinkcentre_drivers/tc_m720tsq-m920tsxq-p330tiny_w1064_20h2_202101.exe"
+write-host  -ForegroundColor Cyan "https://download.lenovo.com/pccbbs/thinkcentre_drivers/tc_m720tsq-m920tsxq-p330tiny_w1064_2004_202007.exe"
 Write-Host  -ForegroundColor Cyan "use 'wpeutil shutdown' and remove USB drive after power is off!"
-#Start-Sleep  -Seconds 20
+Start-Sleep -Seconds 60
 #wpeutil reboot
