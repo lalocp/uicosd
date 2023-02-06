@@ -16,12 +16,12 @@ Import-Module OSD -Force
  
 #Start OSDCloud ZTI the RIGHT way
 Write-Host  -ForegroundColor Cyan "Start OSDCloud with custom parameters"
-Write-Host  -ForegroundColor Cyan "OS: Windows 10 Enterprise LTSC 22H2"
+Write-Host  -ForegroundColor Cyan "OS: Windows 10 Enterprise 22H2"
 
 #Windows 10 Enterprise LTSC 2021
-Start-OSDCloud -OSLanguage en-us -OSBuild 22H2 -OSEdition Enterprise -OSLicense Volume -OSVersion 'Windows 10' -ZTI
-
+#Start-OSDCloud -OSLanguage en-us -OSBuild 22H2 -OSEdition Enterprise -OSLicense Volume -OSVersion 'Windows 10' -ZTI
+Start-OSDCloudGUIDev
 #Restart from WinPE
 Write-Host   -ForegroundColor Cyan "Restarting in 20 seconds!"
-Start-Sleep  -Seconds 20
-wpeutil reboot
+write-host   -ForegroundColor cyan "Restart with wpeutil shutdown"
+Start-Sleep  -Seconds 60
