@@ -30,7 +30,7 @@ Write-Host  -ForegroundColor Cyan "Choose your preferred version of Windows Ente
 Write-Host  -ForegroundColor Cyan "Very Important, to decrease the potential for a Blue Screen of Death crash"
 Write-Host  -ForegroundColor Cyan "Choose Microsoft Update Catalog for the DriverPack"
 
-Start-Sleep -Seconds 120
+Start-Sleep -Seconds 60
 Start-OSDCloudGUI
 
 write-host   -ForegroundColor cyan "Before pulling out the USB drive, shutdown the computer with this command"
