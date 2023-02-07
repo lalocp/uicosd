@@ -1,6 +1,4 @@
 Write-Host  -ForegroundColor Cyan "UIC Tech. Solutions: Windows Deployment process using OSDCloud."
-Start-Sleep -Seconds 5
-
 #Change Display Resolution for Virtual Machine
 if ((Get-MyComputerModel) -match 'Virtual') {
     Write-Host  -ForegroundColor Cyan "Setting Display Resolution to 1600x"
@@ -15,13 +13,14 @@ Write-Host  -ForegroundColor Cyan "Importing the sweet OSD PowerShell Module"
 Import-Module OSD -Force
  
 #Start OSDCloud ZTI the RIGHT way
-Write-Host  -ForegroundColor Cyan "Start OSDCloud with custom parameters"
-Write-Host  -ForegroundColor Cyan "OS: Windows 10 Enterprise 22H2"
+Write-Host  -ForegroundColor Cyan "Starting OSDCloud GUI"
+Write-Host  -ForegroundColor Cyan "Choose your preferred version of Windows Enterprise"
+Write-Host  -ForegroundColor Cyan "Very Important, to decrease the potential for a Blue Screen of Death crash"
+Write-Host  -ForegroundColor Cyan "Choose 'Microsoft Update Catalog' for the 'DriverPack'"
 
-#Windows 10 Enterprise LTSC 2021
-#Start-OSDCloud -OSLanguage en-us -OSBuild 22H2 -OSEdition Enterprise -OSLicense Volume -OSVersion 'Windows 10' -ZTI
-Start-OSDCloudGUIDev
-#Restart from WinPE
-Write-Host   -ForegroundColor Cyan "Restarting in 20 seconds!"
-write-host   -ForegroundColor cyan "Restart with wpeutil shutdown"
+Start-Sleep -Seconds 120
+Start-OSDCloudGUI
+
+write-host   -ForegroundColor cyan "Before pulling out the USB drive, shutdown the computer with this command:
+write-host   -ForegroundColor cyan "'wpeutil shutdown' in a command prompt"
 Start-Sleep  -Seconds 60
