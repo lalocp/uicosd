@@ -15,14 +15,16 @@ catch {
 #Make sure I have the latest OSD Content
 Write-Host  -ForegroundColor Cyan "Updating the awesome OSD PowerShell Module"
 Write-Host  -ForegroundColor Cyan "Importing the sweet OSD PowerShell Module"
+
 try {
-    if (Install-Module OSD -Force) {
-        Import-Module OSD -Force
+    if (Install-Module OSD -Force -ErrorAction SilentlyContinue -Verbose:$false | out-null) {
+          Import-Module OSD -Force -ErrorAction SilentlyContinue -Verbose:$false |out-null
         }
     }
 catch {
         $error | out-null
     }
+    
 #Start OSDCloud ZTI the RIGHT way
 Write-Host  -ForegroundColor Cyan "Starting OSDCloud GUI"
 Write-Host  -ForegroundColor Cyan "Choose your preferred version of Windows Enterprise"
