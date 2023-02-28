@@ -14,10 +14,10 @@ catch {
 
 #Make sure I have the latest OSD Content
 Write-Host  -ForegroundColor Cyan "Updating the awesome OSD PowerShell Module"
-Write-Host  -ForegroundColor Cyan "Importing the sweet OSD PowerShell Module"
 try {
-    if (Install-Module OSD -Force) {
-        Import-Module OSD -Force
+    if (Install-Module OSD -Force -ErrorAction SilentlyContinue -Verbose:$false | out-null) {
+        Write-Host  -ForegroundColor Cyan "Importing the sweet OSD PowerShell Module"
+        Import-Module OSD -Force -ErrorAction SilentlyContinue -Verbose:$false |out-null
         }
     }
 catch {
