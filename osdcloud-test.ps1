@@ -33,10 +33,8 @@ Write-Host  -ForegroundColor Cyan "Choose Microsoft Update Catalog for the Drive
 
 Start-Sleep -Seconds 60
 
-#Start-OSDCloud -OSLanguage en-us -OSBuild 22H2 -OSEdition Enterprise -OSLicense Volume -ZTI -OSVersion 'Windows 10'
-
-powershell -noexit
-
+Start-OSDCloud -OSLanguage en-us -OSBuild 22H2 -OSEdition Enterprise -OSLicense Volume -ZTI -OSVersion 'Windows 10' -Manufacturer None -Product None
+#powershell -noexit
 write-host   -ForegroundColor cyan "Before pulling out the USB drive, shutdown the computer with this command"
 write-host   -ForegroundColor cyan "wpeutil shutdown in a command prompt"
-Start-Sleep  -Seconds 60
+Start-Sleep  -Seconds 5
