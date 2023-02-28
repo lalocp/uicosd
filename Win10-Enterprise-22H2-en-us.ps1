@@ -1,4 +1,5 @@
 Write-Host  -ForegroundColor Cyan "UIC Tech. Solutions OS Deployment using OSDCloud."
+Write-Host  -ForegroundColor Cyan "Installing OS: Windows 10 Enterprise 22H2"
 Start-Sleep -Seconds 5
 
 #Change Display Resolution for Virtual Machine
@@ -10,7 +11,19 @@ if ((Get-MyComputerModel) -match 'Virtual') {
 #Make sure I have the latest OSD Content
 
 Write-Host  -ForegroundColor Cyan "Updating the awesome OSD PowerShell Module"
-Install-Module OSD -Force
+
+<#try {
+     if (Install-Module OSD -Force) {
+        Install-Module OSD -Force
+         }
+     }
+try {
+    If (Import-Module OSD -Force)
+}
+ catch {
+         $error | out-null
+     }
+#>
 
 Write-Host  -ForegroundColor Cyan "Importing the sweet OSD PowerShell Module"
 Import-Module OSD -Force
@@ -23,8 +36,14 @@ Start-OSDCloud -OSLanguage en-us -OSBuild 22H2 -OSEdition Enterprise -OSLicense 
 
 #Restart from WinPE
 #Write-Host -ForegroundColor Cyan "Restarting in 20 seconds!"
-Write-host  -ForegroundColor Cyan "Use this link to download the Lenovo M920q driver pack"
-write-host  -ForegroundColor Cyan "https://download.lenovo.com/pccbbs/thinkcentre_drivers/tc_m720tsq-m920tsxq-p330tiny_w1064_2004_202007.exe"
+#Write-host  -ForegroundColor Cyan "Use this link to download the Lenovo M920q driver pack"
+#write-host  -ForegroundColor Cyan "https://download.lenovo.com/pccbbs/thinkcentre_drivers/tc_m720tsq-m920tsxq-p330tiny_w1064_2004_202007.exe"
+Write-Host  -ForegroundColor Cyan " "
+Write-Host  -ForegroundColor Cyan " "
 Write-Host  -ForegroundColor Cyan "use 'wpeutil shutdown' and remove USB drive after power is off!"
+Write-Host  -ForegroundColor Cyan " "
+Write-Host  -ForegroundColor Cyan " "
+Write-Host  -ForegroundColor Cyan " "
+Write-Host  -ForegroundColor Cyan " "
 Start-Sleep -Seconds 60
 #wpeutil reboot
