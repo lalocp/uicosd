@@ -12,18 +12,14 @@ if ((Get-MyComputerModel) -match 'Virtual') {
 
 Write-Host  -ForegroundColor Cyan "Updating the awesome OSD PowerShell Module"
 
-<#try {
-     if (Install-Module OSD -Force) {
-        Install-Module OSD -Force
-         }
-     }
 try {
-    If (Import-Module OSD -Force)
-}
- catch {
-         $error | out-null
-     }
-#>
+    if (Install-Module OSD -Force -ErrorAction SilentlyContinue -Verbose:$false | out-null) {
+          Import-Module OSD -Force -ErrorAction SilentlyContinue -Verbose:$false |out-null
+        }
+    }
+catch {
+        $error | out-null
+    }
 
 Write-Host  -ForegroundColor Cyan "Importing the sweet OSD PowerShell Module"
 Import-Module OSD -Force
