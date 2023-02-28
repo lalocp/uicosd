@@ -1,5 +1,5 @@
 Write-Host  -ForegroundColor Cyan "UIC Tech. Solutions: Windows Deployment process using OSDCloud."
-Start-Sleep -Seconds 5
+Start-Sleep -Seconds 1
 #Change Display Resolution for Virtual Machine
 
 try {
@@ -31,10 +31,10 @@ Write-Host  -ForegroundColor Cyan "Choose your preferred version of Windows Ente
 Write-Host  -ForegroundColor Cyan "Very Important, to decrease the potential for a Blue Screen of Death crash"
 Write-Host  -ForegroundColor Cyan "Choose Microsoft Update Catalog for the DriverPack"
 
-Start-Sleep -Seconds 60
+Start-Sleep -Seconds 5
 
 Start-OSDCloud -OSLanguage en-us -OSBuild 22H2 -OSEdition Enterprise -OSLicense Volume -ZTI -OSVersion 'Windows 10' -Manufacturer None -Product None
 #powershell -noexit
 write-host   -ForegroundColor cyan "Before pulling out the USB drive, shutdown the computer with this command"
 write-host   -ForegroundColor cyan "wpeutil shutdown in a command prompt"
-Start-Sleep  -Seconds 5
+Start-Sleep  -Seconds 1
