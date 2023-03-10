@@ -51,7 +51,7 @@ write-host -ForegroundColor Yellow "ATTENTION - PLEASE READ"
 write-host -ForegroundColor cyan "Before booting the new Windows Install, remove the USB drive after first shutting down the computer."
 write-host ""
 write-host -ForegroundColor cyan "Before disconnecting the USB drive, shutdown the computer using the following command in the black"
-write-host -Foregroundcolor cyan -NoNewline "command window after this blue window closes:"
+#write-host -Foregroundcolor cyan -NoNewline "command window after this blue window closes:"
 write-host -ForegroundColor RED  -NoNewline " wpeutil shutdown"
 write-host ""
 Start-Sleep  -Seconds 10
