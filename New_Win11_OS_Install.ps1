@@ -52,7 +52,7 @@ write-host -ForegroundColor cyan "Before booting the new Windows Install, remove
 write-host ""
 write-host -ForegroundColor cyan "Before disconnecting the USB drive, shutdown the computer using the following command in the black"
 write-host -Foregroundcolor cyan -NoNewline "command window after this blue window closes:"
-write-host -ForegroundColor RED  -NoNewlin " wpeutil shutdown"
+write-host -ForegroundColor RED  -NoNewline " wpeutil shutdown"
 write-host ""
 Start-Sleep  -Seconds 10
 start-process -FilePath X:\Windows\System32\cmd.exe /k
