@@ -1,9 +1,12 @@
-Write-Host -ForegroundColor Cyan "EAS Tech. Solutions: Windows Deployment process using OSDCloud."
-Write-host ""
-Start-Sleep -Seconds 1
+Write-Host ""
+Write-Host ""
+Write-Host ""
+Write-Host -ForegroundColor Green -BackgroundColor Yellow "EAS Tech. Solutions: Windows Deployment process using OSDCloud."
+Write-Host ""
+Write-Host ""
 # Change Display Resolution for Virtual Machine
 try {
-    if ((Get-MyComputerModel) -match 'Virtual') {
+    if ((Get-MyComputerModel) -like '*Virtual*') {
         try {
         if (Set-DisRes 1600 -Verbose:$false | out-null){
                 Write-Host  -ForegroundColor Cyan "Setting Display Resolution to 1600x"
@@ -32,10 +35,10 @@ catch {
         $error | out-null
     } 
 # Start OSDCloud ZTI the RIGHT way
-Write-Host  -ForegroundColor Cyan "Starting OSDCloud... This will completely erase the local hard drive. Press control C to cancel..."
+Write-Host -ForegroundColor Green -BackgroundColor Yellow "Starting OSDCloud... This will completely erase the local hard drive. Press control C to cancel..."
 Write-Host  ""
 Start-Sleep -Seconds 10
-Write-Host  -ForegroundColor Cyan "Installing Windows 10 22H2 Enterprise"
+Write-Host -ForegroundColor Green -BackgroundColor Yellow  "Installing Windows 10 22H2 Enterprise"
 Start-Sleep -Seconds 5
 #Start-OSDCloud -OSLanguage en-us -OSBuild 22H2 -OSEdition Enterprise -OSLicense Volume -ZTI -OSVersion 'Windows 11' -Manufacturer None -Product None
 Write-Host  ""
