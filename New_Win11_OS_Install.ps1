@@ -51,4 +51,4 @@ Before disconnecting the USB drive, shutdown the computer by typing
                                       WPEUTIL SHUTDOWN
 in the command prompt window after clicking OK.')
 Start-Sleep -Seconds 1
-start-process -FilePath "$env:comspec" -Argumentlist "/k color e4 echo type: 'wpeutil shutdown' without quotes, to shutdown this computer."
+start-process -FilePath "$env:comspec" -Argumentlist "/k color e4 & echo type: 'wpeutil shutdown' without quotes, to shutdown this computer."
