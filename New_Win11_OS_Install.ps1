@@ -50,7 +50,7 @@ write-host ""
 # Add support for message boxes
     Add-Type -AssemblyName PresentationCore,PresentationFramework
 # Show message about shutdown and removing flash drive
-[System.Windows.MessageBox]::Show('ATTENTION - PLEASE READ. Before booting the new Windows Install, remove the USB drive after first shutting down the computer. *** Before disconnecting the USB drive, shutdown the computer using the following command in the black command window after this blue window closes: WPEUTIL SHUTDOWN')
+[System.Windows.MessageBox]::Show('ATTENTION - PLEASE READ! Before disconnecting the USB drive, shutdown the computer typing WPEUTIL SHUTDOWN in the command prompt window after clicking OK')
 write-host ""
-Start-Sleep  -Seconds 10
+Start-Sleep  -Seconds 1
 start-process -FilePath X:\Windows\System32\cmd.exe /k echo "type: 'wpeutil shutdown' without quotes, to shutdown this computer."
