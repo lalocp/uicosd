@@ -1,13 +1,10 @@
-Write-Host  -ForegroundColor Cyan "UIC Tech. Solutions: Windows Deployment process using OSDCloud."
-
+Write-Host -ForegroundColor Cyan "EAS Tech. Solutions: Windows Deployment process using OSDCloud."
+Write-host ""
 Start-Sleep -Seconds 1
-
-#Change Display Resolution for Virtual Machine
-
+# Change Display Resolution for Virtual Machine
 try {
     if ((Get-MyComputerModel) -match 'Virtual') {
         try {
-        write-host ""
         if (Set-DisRes 1600 -Verbose:$false | out-null){
                 Write-Host  -ForegroundColor Cyan "Setting Display Resolution to 1600x"
                 }
@@ -21,36 +18,30 @@ catch {
       $error | out-null
 }
 
-#Make sure I have the latest OSD Content
+# Update OSD with latest content
 
 try {
     if (Install-Module OSD -Force -ErrorAction SilentlyContinue -Verbose:$false | out-null) {
-          Write-Host  -ForegroundColor Cyan "Updating the awesome OSD PowerShell Module"
-          if (Import-Module OSD -Force -ErrorAction SilentlyContinue -Verbose:$false |out-null) {
-            Write-Host  -ForegroundColor Cyan "Importing the sweet OSD PowerShell Module"
+          Write-Host -ForegroundColor Cyan "Updating the awesome OSD PowerShell Module"
+          if (Import-Module OSD -Force -ErrorAction SilentlyContinue -Verbose:$false | out-null) {
+            Write-Host -ForegroundColor Cyan "Importing the sweet OSD PowerShell Module"
             }
         }
     }
 catch {
         $error | out-null
     } 
-#Start OSDCloud ZTI the RIGHT way
-Write-Host  ""
+# Start OSDCloud ZTI the RIGHT way
 Write-Host  -ForegroundColor Cyan "Starting OSDCloud... This will completely erase the local hard drive. Press control C to cancel..."
 Write-Host  ""
-Start-Sleep 10
-Write-Host  ""
+Start-Sleep -Seconds 10
 Write-Host  -ForegroundColor Cyan "Installing Windows 10 22H2 Enterprise"
-Write-Host  ""
 Start-Sleep -Seconds 5
-Write-Host  ""
 Start-OSDCloud -OSLanguage en-us -OSBuild 22H2 -OSEdition Enterprise -OSLicense Volume -ZTI -OSVersion 'Windows 11' -Manufacturer None -Product None
 Write-Host  ""
-write-host ""
 # Add support for message boxes
     Add-Type -AssemblyName PresentationCore,PresentationFramework
-# Show message about shutdown and removing flash drive
+# Display message about shutdown and removing flash drive
 [System.Windows.MessageBox]::Show('ATTENTION - PLEASE READ! Before disconnecting the USB drive, shutdown the computer typing WPEUTIL SHUTDOWN in the command prompt window after clicking OK')
-write-host ""
-Start-Sleep  -Seconds 1
+Start-Sleep -Seconds 1
 start-process -FilePath X:\Windows\System32\cmd.exe /k echo "type: 'wpeutil shutdown' without quotes, to shutdown this computer."
