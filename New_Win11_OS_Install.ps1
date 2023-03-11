@@ -37,11 +37,15 @@ Write-Host  ""
 Start-Sleep -Seconds 10
 Write-Host  -ForegroundColor Cyan "Installing Windows 10 22H2 Enterprise"
 Start-Sleep -Seconds 5
-Start-OSDCloud -OSLanguage en-us -OSBuild 22H2 -OSEdition Enterprise -OSLicense Volume -ZTI -OSVersion 'Windows 11' -Manufacturer None -Product None
+#Start-OSDCloud -OSLanguage en-us -OSBuild 22H2 -OSEdition Enterprise -OSLicense Volume -ZTI -OSVersion 'Windows 11' -Manufacturer None -Product None
 Write-Host  ""
 # Add support for message boxes
     Add-Type -AssemblyName PresentationCore,PresentationFramework
 # Display message about shutdown and removing flash drive
-[System.Windows.MessageBox]::Show('ATTENTION - PLEASE READ! Before disconnecting the USB drive, shutdown the computer typing WPEUTIL SHUTDOWN in the command prompt window after clicking OK')
+
+[void][System.Windows.MessageBox]::Show('                             !!! ATTENTION - PLEASE READ !!!
+Before disconnecting the USB drive, shutdown the computer by typing
+                                      WPEUTIL SHUTDOWN
+in the command prompt window after clicking OK.')
 Start-Sleep -Seconds 1
-start-process -FilePath X:\Windows\System32\cmd.exe /k echo "type: 'wpeutil shutdown' without quotes, to shutdown this computer."
+start-process -FilePath "$env:comspec" -Argumentlist "/k echo type: 'wpeutil shutdown' without quotes, to shutdown this computer."
