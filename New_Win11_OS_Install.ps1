@@ -40,7 +40,7 @@ Write-Host -ForegroundColor Yellow -BackgroundColor REd ""
 Start-Sleep -Seconds 10
 Write-Host -ForegroundColor Yellow -BackgroundColor REd "Installing Windows 10 22H2 Enterprise"
 Start-Sleep -Seconds 5
-#Start-OSDCloud -OSLanguage en-us -OSBuild 22H2 -OSEdition Enterprise -OSLicense Volume -ZTI -OSVersion 'Windows 11' -Manufacturer None -Product None
+Start-OSDCloud -OSLanguage en-us -OSBuild 22H2 -OSEdition Enterprise -OSLicense Volume -ZTI -OSVersion 'Windows 11' -Manufacturer None -Product None
 Write-Host  ""
 # Add support for message boxes
     Add-Type -AssemblyName PresentationCore,PresentationFramework
