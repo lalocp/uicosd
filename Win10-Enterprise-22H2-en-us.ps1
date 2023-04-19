@@ -1,6 +1,5 @@
 Write-Host ""
 Write-Host ""
-Write-Host ""
 Write-Host -ForegroundColor Yellow -BackgroundColor REd "EAS Tech. Solutions: Windows Deployment process using OSDCloud."
 Write-Host ""
 Write-Host ""
@@ -23,7 +22,7 @@ catch {
 
 #Make sure I have the latest OSD Content
 
-Write-Host  -ForegroundColor Cyan "Updating the awesome OSD PowerShell Module"
+Write-Host -ForegroundColor Cyan "Updating the awesome OSD PowerShell Module"
 
 try {
     if (Install-Module OSD -Force -ErrorAction SilentlyContinue -Verbose:$false | out-null) {
@@ -36,15 +35,8 @@ try {
 catch {
         $error | out-null
     } 
-#Start OSDCloud ZTI the RIGHT way
 
-Write-Host -ForegroundColor Yellow -BackgroundColor REd "Starting OSDCloud... This will completely erase the local hard drive. Press control C to cancel..."
-Write-Host -ForegroundColor Yellow -BackgroundColor REd ""
-Start-Sleep -Seconds 5
-Write-Host -ForegroundColor Yellow -BackgroundColor REd "Installing Windows 10 22H2 Enterprise"
-Start-Sleep -Seconds 2
-
-Start-OSDCloud GUI -Brand "UIC Technology Solutions Computer Labs"
+Start-OSDCloudGUI -Brand "UIC Technology Solutions Computer Labs"
 
 Write-Host  -ForegroundColor Cyan " "
 Write-Host  -ForegroundColor Cyan " "
