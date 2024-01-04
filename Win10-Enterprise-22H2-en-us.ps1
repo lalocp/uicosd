@@ -37,6 +37,7 @@ catch {
     } 
 
 Write-Host  -ForegroundColor Cyan "Starting OSDCloud GUI"
+Write-Host  -ForegroundColor Cyan "If you see an Autopilot Json file selected, unselect it."
 Write-Host  -ForegroundColor Cyan "Choose your preferred version of Windows Enterprise"
 Write-Host  -ForegroundColor Cyan "Very Important, to decrease the potential for a Blue Screen of Death crash"
 Write-Host  -ForegroundColor Cyan "Choose Microsoft Update Catalog for the DriverPack"
@@ -54,4 +55,4 @@ in the command prompt window after clicking OK.')
 Start-Sleep -Seconds 1
 start-process -FilePath "$env:comspec" -Argumentlist "/k color e4 & echo type: 'wpeutil shutdown' without quotes, to shutdown this computer."
 
-Start-Sleep -Seconds 30
+Start-Sleep -Seconds 15
