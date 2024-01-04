@@ -1,6 +1,5 @@
 Write-Host ""
 Write-Host ""
-Write-Host ""
 Write-Host -ForegroundColor Yellow -BackgroundColor REd "EAS Tech. Solutions: Windows Deployment process using OSDCloud."
 Write-Host ""
 Write-Host ""
@@ -35,12 +34,14 @@ catch {
         $error | out-null
     } 
 # Start OSDCloud ZTI the RIGHT way
-Write-Host -ForegroundColor Yellow -BackgroundColor REd "Starting OSDCloud... This will completely erase the local hard drive. Press control C to cancel..."
-Write-Host -ForegroundColor Yellow -BackgroundColor REd ""
-Start-Sleep -Seconds 10
-Write-Host -ForegroundColor Yellow -BackgroundColor REd "Installing Windows 10 22H2 Enterprise"
-Start-Sleep -Seconds 5
-Start-OSDCloud -OSLanguage en-us -OSBuild 22H2 -OSEdition Enterprise -OSLicense Volume -ZTI -OSVersion 'Windows 11' -Manufacturer None -Product None
+#Write-Host -ForegroundColor Yellow -BackgroundColor REd "Starting OSDCloud... This will completely erase the local hard drive. Press control C to cancel..."
+Write-Host -ForegroundColor Yellow -BackgroundColor REd "Starting OSDCloud Graphical"
+Write-Host  -ForegroundColor Cyan "If you see an Autopilot json file selected, unselect it."
+Start-Sleep -Seconds 1
+#Write-Host -ForegroundColor Yellow -BackgroundColor REd "Installing Windows 10 22H2 Enterprise"
+#Start-Sleep -Seconds 5
+Start-OSDCloudGUI
+#Start-OSDCloud -OSLanguage en-us -OSBuild 22H2 -OSEdition Enterprise -OSLicense Volume -ZTI -OSVersion 'Windows 11' -Manufacturer None -Product None
 Write-Host  ""
 # Add support for message boxes
     Add-Type -AssemblyName PresentationCore,PresentationFramework
