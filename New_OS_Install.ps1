@@ -26,15 +26,11 @@ catch {
         $error | out-null
     } 
 #Start OSDCloud ZTI the RIGHT way
-Write-Host  -ForegroundColor Cyan "Starting OSDCloud... This will completely erase the local hard drive. Press control C to cancel..."
-
-Start-Sleep 10
-
+#Write-Host  -ForegroundColor Cyan "Starting OSDCloud... This will completely erase the local hard drive. Press control C to cancel..."
 Write-Host  -ForegroundColor Cyan "Installing Windows 10 22H2 Enterprise"
-
-Start-Sleep -Seconds 5
-
-Start-OSDCloud -OSLanguage en-us -OSBuild 22H2 -OSEdition Enterprise -OSLicense Volume -ZTI -OSVersion 'Windows 10' -Manufacturer None -Product None
+Write-Host  -ForegroundColor Cyan "If you see an Autopilot json file selected, unselect it."
+Start-OSDCloudGUI
+#Start-OSDCloud -OSLanguage en-us -OSBuild 22H2 -OSEdition Enterprise -OSLicense Volume -ZTI -OSVersion 'Windows 10' -Manufacturer None -Product None
 Write-Host  ""
 # Add support for message boxes
     Add-Type -AssemblyName PresentationCore,PresentationFramework
