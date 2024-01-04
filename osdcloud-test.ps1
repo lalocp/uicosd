@@ -26,15 +26,15 @@ catch {
     }
     
 #Start OSDCloud ZTI the RIGHT way
-Write-Host  -ForegroundColor Cyan "Starting OSDCloud GUI"
-Write-Host  -ForegroundColor Cyan "Choose your preferred version of Windows Enterprise"
-Write-Host  -ForegroundColor Cyan "Very Important, to decrease the potential for a Blue Screen of Death crash"
-Write-Host  -ForegroundColor Cyan "Choose Microsoft Update Catalog for the DriverPack"
-
+Write-Host -ForegroundColor Cyan "Starting OSDCloud GUI"
+Write-Host -ForegroundColor Cyan "If you see the Autopilot json file selected, unselect it"
+Write-Host -ForegroundColor Cyan "Choose your preferred version of Windows Enterprise"
+Write-Host -ForegroundColor Cyan "Very Important, to decrease the potential for a Blue Screen of Death crash"
+Write-Host -ForegroundColor Cyan "Choose Microsoft Update Catalog for the DriverPack"
 Start-Sleep -Seconds 5
-
-Start-OSDCloud -OSLanguage en-us -OSBuild 22H2 -OSEdition Enterprise -OSLicense Volume -ZTI -OSVersion 'Windows 10' -Manufacturer None -Product None
+Start-OSDCloudGUI
+#Start-OSDCloud -OSLanguage en-us -OSBuild 22H2 -OSEdition Enterprise -OSLicense Volume -ZTI -OSVersion 'Windows 10' -Manufacturer None -Product None
 #powershell -noexit
-write-host   -ForegroundColor cyan "Before pulling out the USB drive, shutdown the computer with this command"
-write-host   -ForegroundColor cyan "wpeutil shutdown in a command prompt"
+write-host -ForegroundColor cyan "Before pulling out the USB drive, shutdown the computer with this command"
+write-host -ForegroundColor cyan "wpeutil shutdown in a command prompt"
 Start-Sleep  -Seconds 1
