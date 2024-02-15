@@ -1,5 +1,5 @@
 ###################################################################
-#	Powershell Device AD Join
+#     Powershell Device AD Join
 #
 #     This script will Bind this device to AD
 #
@@ -11,13 +11,13 @@ net user lansoft /add
 net localgroup administrators lansoft /add
 
 # Remove Autologon
-Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" -Name "AutoAdminLogon" -PropertyType REG_SZ -Value 0 -Force | out-null
+Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" -Name "AutoAdminLogon" -Value 0 -Force | out-null
 Clear-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" -Name "DefaultUserName" -Force | out-null
 
 # Install pswindowsupdate to update windows
 Install-Module -Name PSWindowsUpdate -Force
 Import-Module PSWindowsUpdate -Force
-Get-WindowsUpdate -Severity Important -Install -Force -Download -IgnoreReboot
+Get-WindowsUpdate -Severity Important -Install -Download -IgnoreReboot
 
 # Get Credentials of user with bind permissions
 Write-Host "Please enter the username and password when prompted"
