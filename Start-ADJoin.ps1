@@ -10,10 +10,14 @@
 net user lansoft /add
 net localgroup administrators lansoft /add
 
+# Install pswindowsupdate to update windows
+Install-Module -Name PSWindowsUpdate -Force
+Import-Module PSWindowsUpdate -Force
+Get-WindowsUpdate -Severity Important -Install -Force -Download -IgnoreReboot
+
 # Get Credentials of user with bind permissions
 Write-Host "Please enter the username and password when prompted"
-Sleep 5
-
+Sleep 2
 $creds = get-credential
 
 # Execute Join operation
