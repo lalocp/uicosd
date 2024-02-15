@@ -10,6 +10,10 @@
 net user lansoft /add
 net localgroup administrators lansoft /add
 
+# Remove Autologon
+Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" -Name "AutoAdminLogon" -PropertyType REG_SZ -Value 0 -Force | out-null
+Clear-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" -Name "DefaultUserName" -Force | out-null
+
 # Install pswindowsupdate to update windows
 Install-Module -Name PSWindowsUpdate -Force
 Import-Module PSWindowsUpdate -Force
