@@ -26,6 +26,7 @@ $newname = Read-Host "Please enter the new name of the computer"
 
 sleep 2
 WRITE-HOST "The computer will be renamed to $($newname) and restart in 5 seconds."
+WRITE-HOST "On reboot, the computer may automatically login as defaultuser0 with admin privileges."
 WRITE-HOST "Press control C to cancel"
 
 Sleep 8
