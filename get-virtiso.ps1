@@ -14,7 +14,7 @@ Write-Host "Found OS Partition on $OSDiskLetter" -ForegroundColor Cyan
 
 # 2. Define Direct ISO URL & Temp Location on the OS drive
 # Version 0.1.285 is the latest stable version as of early 2026.
-$VirtioZipUrl = "https://github.com/lalocp/uicosd/raw/refs/heads/main/virtiobasic.zip"
+$VirtioIsoUrl = "https://github.com/lalocp/uicosd/raw/refs/heads/main/virtiobasic.zip"
 $TempPath = "$OSDiskLetter\VirtioSetup"
 $IsoPath = "$TempPath\virtio.iso"
 
