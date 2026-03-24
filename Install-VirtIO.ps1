@@ -37,5 +37,5 @@ Write-Host "Cleaning up temp files..." -ForegroundColor Gray
 Remove-Item $TempPath -Recurse -Force
 
 Write-Host "ZTI Workflow Complete. Rebooting in 10 seconds..." -ForegroundColor Cyan
-Start-Sleep -Seconds 10
-Restart-Computer -Force
+#Start-Sleep -Seconds 10
+#Restart-Computer -Force
