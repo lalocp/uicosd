@@ -1,6 +1,2 @@
-$mouse = Get-WmiObject Win32_PnPEntity | Where-Object { $_.Service -eq 'mouhid' -or $_.Name -like "*mouse*" }
-$mouse.Disable()
-Start-Sleep -s 2
-$mouse.Enable()
-$m = Get-WmiObject Win32_PnPEntity | Where-Object { $_.Service -eq "i8042prt" -or $_.Service -eq "mouclass" }
-if ($m) { $m | ForEach-Object { $_.Disable(); Start-Sleep 1; $_.Enable() } }
+# This targets the "Mouse" class specifically (GUID {4d36e96f-e325-11ce-bfc1-08002be10318})
+pnputil /restart-device /class {4d36e96f-e325-11ce-bfc1-08002be10318}
